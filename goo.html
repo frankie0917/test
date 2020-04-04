@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --main: #00adb5;
+        --main-light: #aeecf0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 5fr;
+        filter: url("#goo");
+      }
+
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .blob {
+        padding: 1rem;
+        padding-right: 2rem;
+        position: relative;
+        transition: all 0.5s ease-in;
+        cursor: pointer;
+      }
+
+      .blob::after {
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+        z-index: -10;
+        display: block;
+        position: absolute;
+        width: 150%;
+        height: 20px;
+        background:var(--main);
+        padding: 1rem;
+        margin-left: 100%;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .blob:hover {
+        color: white;
+      }
+
+      .blob:hover:after {
+        margin-left: -5%;
+      }
+
+      .block {
+        background: var(--main);
+        margin-left: 0.2rem;
+        text-align: center;
+      }
+
+      @keyframes ani {
+        0% {
+          margin-left: -50%;
+        }
+
+        60% {
+          margin-left: 100%;
+        }
+        90% {
+          margin-left: 50%;
+        }
+        100% {
+          margin-left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrap">
+        <div class="blob">1</div>
+        <div class="blob">2</div>
+        <div class="blob">3</div>
+        <div class="blob">4</div>
+        <div class="bg"></div>
+      </div>
+      <div class="block">456</div>
+    </div>
+    <svg>
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"
+            result="goo"
+          />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>

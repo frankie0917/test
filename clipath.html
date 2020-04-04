@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clip path</title>
+    <style>
+      * {
+        font-family: sans-serif;
+        color: rgb(91,89,120);
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* background: rgb(251,232,186); */
+        background: linear-gradient(110deg, #FFD9E8 4%, #FFD9E8 40%, #DE95BA calc(40% + 1px), #DE95BA 50%, #7F4A88 calc(50% + 1px), #7F4A88 70%, #4A266A calc(70% + 1px), #4A266A 100%);
+      }
+
+      .info {
+        background: rgb(121,181,205);
+        width: 300px;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        position: relative;
+        clip-path: circle(10% at 90% 20%);
+        transition: all ease-in-out 0.5s;
+      }
+
+      .info span {
+        position: absolute;
+        font-weight: bold;
+        font-size: 170%;
+        right: 1em;
+        top: 0.83em;
+        opacity: 1;
+        transition: ease-in-out all 0.5s;
+      }
+      .info p {
+        font-size: 16px;
+      }
+
+      .info:hover {
+        background: rgb(254,194,177);
+
+        clip-path: circle(80%);
+      }
+
+      .info:hover span {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info">
+      <span>i</span>
+      <h1>
+        Hey
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, harum
+          iure assumenda doloremque adipisci eos.
+        </p>
+      </h1>
+    </div>
+  </body>
+</html>

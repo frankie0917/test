@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <style>
+      :root {
+        --container-width: 700px;
+      }
+
+      * {
+        font-family: Microsoft YaHei;
+      }
+
+      body,
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        margin: 0 auto;
+        width: var(--container-width);
+        padding: 0 1rem;
+      }
+
+      .header {
+        margin-bottom: 1rem;
+        background: #444;
+        color: white;
+      }
+
+      .logo {
+        display: flex;
+      }
+
+      #logo-icon {
+        width: 8%;
+        margin-right: 0.5rem;
+      }
+
+      .header a,
+      .header .manage {
+        padding: 1rem 0.5rem;
+        cursor: pointer;
+      }
+
+      .header a:hover,
+      .header .manage:hover {
+        background: #777;
+      }
+
+      .header .nav,
+      .header .link-group,
+      .header .user {
+        display: flex;
+        align-items: center;
+      }
+
+      .header .link-group {
+        margin-left: auto;
+      }
+
+      .header .manage {
+        position: relative;
+      }
+
+      .header .manage .sub-menu {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        width: 100px;
+        text-align: center;
+        background: #444;
+        opacity: 1;
+        top: 140%;
+      }
+
+      .header .manage .title:hover ~ .sub-menu,
+      .header .manage:hover .sub-menu {
+        display: flex;
+      }
+
+      .header .manage .sub-menu::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        display: block;
+        border: 15px transparent solid;
+        border-bottom-color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="nav">
+          <div class="logo">
+            <svg
+              id="logo-icon"
+              t="1585918778472"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="2200"
+            >
+              <path
+                d="M810.666667 938.666667H213.333333c-46.933333 0-85.333333-38.4-85.333333-85.333334v-213.333333c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666666 42.666667v192c0 12.8 8.533333 21.333333 21.333334 21.333333h554.666666c12.8 0 21.333333-8.533333 21.333334-21.333333V640c0-25.6 17.066667-42.666667 42.666666-42.666667s42.666667 17.066667 42.666667 42.666667v213.333333c0 46.933333-38.4 85.333333-85.333333 85.333334z m51.2-384c-64 0-119.466667-55.466667-119.466667-119.466667 0 64-51.2 119.466667-115.2 119.466667-64 0-119.466667-55.466667-115.2-119.466667 0 64-51.2 119.466667-119.466667 119.466667-64 0-119.466667-55.466667-115.2-119.466667 0 64-51.2 119.466667-119.466666 119.466667C93.866667 554.666667 42.666667 499.2 42.666667 435.2L123.733333 213.333333h776.533334l81.066666 221.866667c0 64-51.2 119.466667-119.466666 119.466667zM682.666667 384h119.466666l8.533334 42.666667c0 12.8 4.266667 21.333333 12.8 29.866666 8.533333 8.533333 17.066667 12.8 29.866666 12.8 25.6 0 42.666667-17.066667 42.666667-42.666666 0-12.8-4.266667-21.333333-12.8-29.866667L832 298.666667h-640L132.266667 405.333333c-4.266667 8.533333-4.266667 12.8-4.266667 21.333334 0 25.6 17.066667 42.666667 42.666667 42.666666 21.333333 0 38.4-17.066667 42.666666-38.4L221.866667 384H341.333333v42.666667c0 25.6 17.066667 42.666667 42.666667 42.666666s42.666667-17.066667 42.666667-42.666666V384h170.666666v42.666667c0 25.6 17.066667 42.666667 42.666667 42.666666s42.666667-17.066667 42.666667-42.666666V384z m170.666666-213.333333H170.666667c-25.6 0-42.666667-17.066667-42.666667-42.666667 0-21.333333 17.066667-42.666667 38.4-42.666667H853.333333c21.333333 0 42.666667 17.066667 42.666667 42.666667 0 21.333333-17.066667 42.666667-42.666667 42.666667z"
+                p-id="2201"
+                fill="#ffffff"
+              ></path>
+            </svg>
+            <h3>LOGO</h3>
+          </div>
+          <div class="link-group">
+            <a href="#">订单</a>
+            <a href="#">购物车</a>
+            <div class="manage">
+              <span class="title">管理</span>
+              <div class="sub-menu">
+                <a href="#">修改密码</a>
+                <a href="#">个人资料</a>
+                <a href="#">修改头像</a>
+                <a href="#">收货地址</a>
+              </div>
+            </div>
+          </div>
+          <div class="user">
+            <div class="thumbnail">
+              <img src="" alt="" />
+            </div>
+            <a href="#" class="login">登录</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="container">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos et
+        exercitationem reiciendis excepturi nesciunt? Itaque, reprehenderit
+        neque a saepe totam accusantium doloremque dolorem voluptates distinctio
+        ad odit natus, ducimus exercitationem? Lorem ipsum dolor, sit amet
+        consectetur adipisicing elit. Eos et exercitationem reiciendis excepturi
+        nesciunt? Itaque, reprehenderit neque a saepe totam accusantium
+        doloremque dolorem voluptates distinctio ad odit natus, ducimus
+        exercitationem? Lorem ipsum dolor, sit amet consectetur adipisicing
+        elit. Eos et exercitationem reiciendis excepturi nesciunt? Itaque,
+        reprehenderit neque a saepe totam accusantium doloremque dolorem
+        voluptates distinctio ad odit natus, ducimus exercitationem?
+      </div>
+    </div>
+  </body>
+</html>
